@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\Job;
 
+// php -S localhost:8000 -t public run the server 
 Route::get('/', function () {
+
+   
     return view('home');
 });
 
