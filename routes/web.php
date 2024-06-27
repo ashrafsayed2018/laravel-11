@@ -12,9 +12,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/jobs', fn() => view("jobs", [
-     "jobs" => Job::all()
- ]));
+Route::get('/jobs', function()  {
+    $jobs = Job::with("employer")->paginate(3);
+    return view("jobs", [
+            "jobs" => $jobs
+        ]);
+});
 
  Route::get('/jobs/{id}', function($id)  {
      if(!is_integer($id)) {

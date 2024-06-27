@@ -4,13 +4,17 @@
        
         {{request()->path()}} 
     </x-slot:heading>
-    <ul>
+    <div class="space-y-4">
     @foreach ($jobs as $job) 
-        <li>
-            <a href="/jobs/{{ $job['id'] }}">
-            <strong>{{$job['title']}}</strong> pays {{$job['salary']}} per year
+      
+            <a href="/jobs/{{ $job['id'] }}" class="block py-4 px-6 bg-white p-4 rounded-lg">
+             <div class="text-sm font-bold text-teal-500">{{$job->employer->name}}</div>
+             <div>
+             <strong>{{$job['title']}}</strong> pays {{$job['salary']}} per year
+             </div>
             </a>
-        </li>
+       
     @endforeach
-    </ul>
+    </div>
+    <div>{{$jobs->links()}}</div>
 </x-layout>
