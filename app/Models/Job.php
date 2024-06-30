@@ -13,7 +13,7 @@ class Job extends Model {
    use HasFactory;
     protected $table = "job_listings";
 
-    protected $fillable = ['title', 'location', 'salary'];
+    protected $guarded = ['id'];
 
     public function employer():BelongsTo {
         return $this->belongsTo(Employer::class);
