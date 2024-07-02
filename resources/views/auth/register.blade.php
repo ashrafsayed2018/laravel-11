@@ -3,7 +3,7 @@
         <!-- get the path from the url -->
         {{request()->path()}} 
     </x-slot:heading>
-    <form method="POST" action="/register">
+    <form method="POST" action="{{route('register')}}">
         @csrf
         <div class="space-y-12">
           <div class="border-b border-gray-900/10 pb-12">
@@ -58,7 +58,7 @@
         </div>
       
         <div class="mt-6 flex items-center justify-end gap-x-6">
-          <x-cancel-button href="/login">
+          <x-cancel-button href="{{route('login')}}">
            already have an account? Login</x-cancel-button>
           <x-form-button>Register</x-form-button>
         </div>

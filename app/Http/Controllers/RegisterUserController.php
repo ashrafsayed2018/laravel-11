@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -29,7 +30,15 @@ class RegisterUserController extends Controller
 
         // create the user
 
-        User::create($validatedAttributes);
+       $user = User::create($validatedAttributes);
+
+        // create empolyer 
+
+       Employer::create([
+           'user_id' => $user->id,
+           'name' => $user->first_name . ' ' . $user->last_name
+       ]);
+
 
         // redirect to login page
 
