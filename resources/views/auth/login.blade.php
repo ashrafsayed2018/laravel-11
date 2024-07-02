@@ -10,12 +10,21 @@
             <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <x-form-field>
                 <x-form-label for="email" >Email</x-form-label>
-                  <x-form-input type="text" name="email" id="email" placeholder="your email" />
+                  <x-form-input 
+                  type="text" 
+                  name="email" 
+                  :value="old('email')"
+                  id="email" 
+                  placeholder="your email" />
                   <x-form-error name="email"/>
               </x-form-field>
               <x-form-field>
                   <x-form-label :for="'password'" >Password</x-form-label>
-                  <x-form-input type="password" name="password" id="password" placeholder="your-job-password" />
+                  <x-form-input 
+                  type="password" 
+                  name="password"
+                  :value="old('password')" 
+                  id="password" placeholder="your-job-password" />
                   <x-form-error name="password"/>
               </x-form-field>
             </div>
