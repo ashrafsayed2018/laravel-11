@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>30 days laravel jevery laracasts</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="h-full">
+<body class="h-full bg-red-400">
 
   <div class="min-h-full">
     <nav class="bg-gray-800">
